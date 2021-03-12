@@ -1,6 +1,8 @@
 let menu;
 const htmlMenu=document.querySelector("#menu");
+const htmlCarrito=document.querySelector("#carrito");
 const url="https://gist.githubusercontent.com/josejbocanegra/9a28c356416badb8f9173daf36d1460b/raw/5ea84b9d43ff494fcbf5c5186544a18b42812f09/restaurant.json";
+const carrito =[];
 
 async function getInfo()
 {
@@ -20,6 +22,7 @@ async function getInfo()
 
 async function loadMenu()
 {
+    htmlCarrito.appendChild(document.createTextNode(carrito.length));
     menu.forEach(c => {
         console.log(c);
         //crea accordion obj
@@ -49,6 +52,7 @@ async function loadMenu()
             card.className="card";
             //crea y agrega imagen
             let cardImg=document.createElement("img");
+            cardImg.className="card-img-top";
             cardImg.src=p.image;
             cardImg.alt=p.name;
             card.appendChild(cardImg);
@@ -74,7 +78,12 @@ async function loadMenu()
             precio.appendChild(precioTxt);
             cardBody.appendChild(precio);
             //agregar boton para combrar
-
+            let btnCompra = document.createElement("button");
+            btnCompra.className="btn btn-primary";
+            btnCompra.addEventListener("click",addCarrito(p));
+            let compraTxt= document.createTextNode("Agregar a Carrito");
+            btnCompra.appendChild(compraTxt);
+            cardBody.appendChild(btnCompra);
             card.appendChild(cardBody);
             products.appendChild(card);
         });
@@ -83,4 +92,10 @@ async function loadMenu()
     });
 }
 
-getInfo().then((resp)=>loadMenu());
+const addCarrito=(producto)=>
+{
+    carrito.push(producto);
+    htmlCarrito.replaceChild(document.createTextNode(carrito.length),htmlCarrito.childNodes[0]);
+}
+
+getInfo().then(()=>loadMenu());
