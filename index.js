@@ -80,7 +80,7 @@ async function loadMenu()
             //agregar boton para combrar
             let btnCompra = document.createElement("button");
             btnCompra.className="btn btn-primary";
-            btnCompra.addEventListener("click",addCarrito(p));
+            btnCompra.addEventListener("click",()=>{addCarrito(p)});
             let compraTxt= document.createTextNode("Agregar a Carrito");
             btnCompra.appendChild(compraTxt);
             cardBody.appendChild(btnCompra);
