@@ -86,7 +86,7 @@ const display=(categoria)=>{
     cardBody.appendChild(foodPrice);
     //agrega el botón para agregar a carrito
     let foodBtn=document.createElement("a");
-    foodBtn.classList.add("btn","btn-primary");
+    foodBtn.classList.add("btn");
     foodBtn.addEventListener("click",()=>{addCarrito(comida);});
     let foodBtnTxt=document.createTextNode("Add to car");
     foodBtn.appendChild(foodBtnTxt);
@@ -165,11 +165,11 @@ const showCarrito=()=>{
     dTd.appendChild(dTxt);
     bodyTr.appendChild(dTd);
     let prTd= document.createElement("td");
-    let prTxt=document.createTextNode(obj.price);
+    let prTxt=document.createTextNode(`$${obj.price}`);
     prTd.appendChild(prTxt);
     bodyTr.appendChild(prTd);
     let aTd= document.createElement("td");
-    let aTxt=document.createTextNode(obj.amount.toFixed(2));
+    let aTxt=document.createTextNode(`$${obj.amount.toFixed(2)}`);
     aTd.appendChild(aTxt);
     bodyTr.appendChild(aTd);
     cost+=obj.amount;
@@ -179,6 +179,7 @@ const showCarrito=()=>{
     plusBtn.appendChild(plustBtnTxt);
     plusBtn.addEventListener("click",()=>{inc(obj.description);});
     modTd.appendChild(plusBtn);
+    modTd.appendChild(document.createElement("span").appendChild(document.createTextNode("   ")));
     let minBtn=document.createElement("button");
     let minBtnTxt=document.createTextNode("-");
     minBtn.appendChild(minBtnTxt);
@@ -206,11 +207,14 @@ const showCarrito=()=>{
   let cancelTxt=document.createTextNode("Cancel");
   cancelBtn.appendChild(cancelTxt);
   //Toca agregar modal
+  //Button to activate modal
   cancelBtn.type="button";
   cancelBtn.className="btn";
+  cancelBtn.id="canBtn";
   cancelBtn.setAttribute("data-bs-toggle","modal");
   cancelBtn.setAttribute("data-bs-target","#cancelModal");
 
+  //
   let cancelModal=document.createElement("div");
   cancelModal.classList.add("modal","fade");
   cancelModal.id="cancelModal";
@@ -227,7 +231,7 @@ const showCarrito=()=>{
   let headM=document.createElement("h5");
   headM.className="modal-title";
   headM.id="cancelModalLabel";
-  let headMTxt=document.createTextNode("Cancle the order");
+  let headMTxt=document.createTextNode("Cancel the order");
   headM.appendChild(headMTxt);
   modalHead.appendChild(headM);
   let headBtn=document.createElement("button");
@@ -242,6 +246,7 @@ const showCarrito=()=>{
   let modalBodyP=document.createElement("p");
   let modalBodyPTxt=document.createTextNode("Are you sure about canceling the order?");
   modalBodyP.appendChild(modalBodyPTxt);
+  modalBody.appendChild(modalBodyP);
   modalCont.appendChild(modalBody);
 
   let modalFdooter=document.createElement("div");
@@ -252,6 +257,7 @@ const showCarrito=()=>{
   modalAccept.className="btn";
   modalAccept.setAttribute("data-bs-dismiss","modal");
   modalAccept.addEventListener("click",()=>{clearCarrito();});
+  modalAccept.id="Accept";
   let modalAcceptTxt=document.createTextNode("Yes, I want to cancel my order");
   modalAccept.appendChild(modalAcceptTxt);
   modalFdooter.appendChild(modalAccept);
@@ -259,6 +265,7 @@ const showCarrito=()=>{
   let modalClose=document.createElement("button");
   modalClose.type="button";
   modalClose.className="btn";
+  modalClose.id="Cancel";
   modalClose.setAttribute("data-bs-dismiss","modal");
   let modalCloseTxt=document.createTextNode("No, I want to continue adding products");
   modalClose.appendChild(modalCloseTxt);
@@ -269,9 +276,13 @@ const showCarrito=()=>{
   c31.appendChild(cancelBtn);
   c31.appendChild(cancelModal);
   ttlRow.appendChild(c31);
+
+  //Confirm button
   let c32=document.createElement("div");
   c32.className="col-1";
   let confBtn = document.createElement("button");
+  confBtn.id="confBtn";
+  confBtn.className="btn";
   let confTxt=document.createTextNode("Confirm");
   confBtn.appendChild(confTxt);
   confBtn.addEventListener("click",()=>{console.log(carrito);});

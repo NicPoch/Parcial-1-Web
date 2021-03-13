@@ -26,12 +26,47 @@ body nav ul li {
 body #menu h1 {
   text-align: center;
 }
-body #menu #foodRow {
-  display: inline-block;
-  padding: 0;
-}
 body #menu #foodRow .card {
-  width: 18rem;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+body #menu #foodRow .card .btn {
+  background-color: #0C0200;
+  color: #f7efec;
+  margin-left: 0;
+}
+body #menu table tr td button {
+  background-color: gray;
+  color: #f7efec;
+  border-radius: 4px;
+  text-align: center;
+  display: inline-block;
+}
+body #menu #confBtn {
+  background-color: #ecae70;
+  color: #0C0200;
+  border-radius: 5px;
+  border-color: #0C0200;
+  border-width: 2px;
+}
+body #menu #canBtn {
+  background-color: #D00E14;
+  border-radius: 5px;
+  border-color: grey;
+  border-width: 2px;
+}
+body #menu #Cancel {
+  background-color: #D00E14;
+  border-radius: 5px;
+  border-color: grey;
+  border-width: 2px;
+}
+body #menu #Accept {
+  background-color: #ecae70;
+  color: #0C0200;
+  border-radius: 5px;
+  border-color: #0C0200;
+  border-width: 2px;
 }
 body footer {
   text-align: center;

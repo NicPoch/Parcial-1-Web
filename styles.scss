@@ -49,13 +49,66 @@ body
             text-align: center;
         }
         #foodRow
-        {   
-            display: inline-block;
-            padding: 0;
+        {
             .card
             {
-                width:18rem;
+                //border: 3px solid black;
+                padding-left: 2px;
+                padding-right: 2px;
+                .btn
+                {
+                    background-color: #0C0200;
+                    color: #f7efec;
+                    margin-left: 0;
+                }
             }
+        }
+        table
+        {
+            tr
+            {
+                td
+                {
+                    button
+                    {
+                        background-color: gray;
+                        color: #f7efec;
+                        border-radius: 4px;
+                        text-align: center;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+        #confBtn
+        {
+            background-color: #ecae70;
+            color: #0C0200;
+            border-radius: 5px;
+            border-color: #0C0200;
+            border-width: 2px;
+        }
+        #canBtn
+        {
+            background-color: #D00E14;
+            border-radius: 5px;
+            border-color: grey;
+            border-width: 2px;
+        }
+        #Cancel
+        {
+            background-color: #D00E14;
+            border-radius: 5px;
+            border-color: grey;
+            border-width: 2px;
+        }
+        #Accept
+        {
+            background-color: #ecae70;
+            color: #0C0200;
+            border-radius: 5px;
+            border-color: #0C0200;
+            border-width: 2px;
         }
     }
     footer
