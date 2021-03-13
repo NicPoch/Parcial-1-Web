@@ -169,7 +169,7 @@ const showCarrito=()=>{
     prTd.appendChild(prTxt);
     bodyTr.appendChild(prTd);
     let aTd= document.createElement("td");
-    let aTxt=document.createTextNode(obj.amount);
+    let aTxt=document.createTextNode(obj.amount.toFixed(2));
     aTd.appendChild(aTxt);
     bodyTr.appendChild(aTd);
     cost+=obj.amount;
@@ -197,7 +197,7 @@ const showCarrito=()=>{
   let c6=document.createElement("div");
   c6.className="col-10";
   let ttlH=document.createElement("h3");
-  ttlH.appendChild(document.createTextNode(`Total:$${cost}`));
+  ttlH.appendChild(document.createTextNode(`Total:$${cost.toFixed(2)}`));
   c6.appendChild(ttlH);
   ttlRow.appendChild(c6);
   let c31=document.createElement("div");
@@ -264,7 +264,6 @@ const showCarrito=()=>{
   modalClose.appendChild(modalCloseTxt);
   modalFdooter.appendChild(modalClose);
   modalCont.appendChild(modalFdooter);
-  
   modalDiag.appendChild(modalCont);
   cancelModal.appendChild(modalDiag);
   c31.appendChild(cancelBtn);
@@ -300,6 +299,7 @@ const dec=(name)=>{
 
 const clearCarrito=()=>{
   carrito=[];
+  htmlCarrito.replaceChild(document.createTextNode(0),htmlCarrito.childNodes[0]);
   showCarrito();
 };
 
