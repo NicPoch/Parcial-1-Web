@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+body {
+  background-color: whitesmoke;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+body #header #title {
+  margin-left: 1vw;
+  font-family: "Satisfy", cursive;
+}
+body #header #divCarrito {
+  display: inline;
+  margin-right: 0;
+  text-align: right;
+}
+body #header #divCarrito img {
+  width: 2vw;
+  height: 2vw;
+}
+body nav ul li {
+  padding: auto;
+  text-align: center;
+  padding: 1vw;
+  color: #f7efec;
+}
+body #menu h1 {
+  text-align: center;
+}
+body #menu #foodRow {
+  display: inline-block;
+  padding: 0;
+}
+body #menu #foodRow .card {
+  width: 18rem;
+}
+body footer {
+  text-align: center;
+  font-weight: lighter;
+}
+body footer a {
+  text-decoration: none;
+  color: #0C0200;
+}

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+$color1:#f7efec;
+$color2:#0C0200;
+$color3:#E78727;
+$color4:#751D06;
+$color5:#D00E14;
+
+body
+{
+    background-color: whitesmoke;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    #header
+    {        
+        #title
+        {
+            margin-left: 1vw;
+            font-family: 'Satisfy', cursive;
+        }
+        #divCarrito
+        {
+            display: inline;
+            margin-right: 0;
+            text-align: right;
+            img
+            {
+                width: 2vw;
+                height: 2vw;
+            }
+        }
+    }
+    nav
+    {
+        ul
+        {
+            li
+            {
+                padding: auto;
+                text-align: center;
+                padding: 1vw;
+                color: #f7efec;
+            }
+        }
+    }
+    #menu
+    {
+        h1
+        {
+            text-align: center;
+        }
+        #foodRow
+        {   
+            display: inline-block;
+            padding: 0;
+            .card
+            {
+                width:18rem;
+            }
+        }
+    }
+    footer
+    {
+        text-align: center;
+        font-weight: lighter;
+        a
+        {
+            text-decoration: none;
+            color: #0C0200;
+        }
+    }
+}
+
