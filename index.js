@@ -53,7 +53,7 @@ const display=(categoria)=>{
   let foodRow=document.createElement("row");
   foodRow.id="foodRow";
   let cardG= document.createElement("div");
-  cardG.className="card-group";
+  cardG.classList.add("d-flex","flex-wrap");
   display[0].products.forEach((comida)=>{
     //crea la card
     let card=document.createElement("div");
@@ -110,8 +110,10 @@ const showCarrito=()=>{
   rowHead.appendChild(head);
   htmlMenu.appendChild(rowHead);
   //crea la tabla 
+  let tableRow=document.createElement("div");
+  tableRow.className="d-flex";
   let table = document.createElement("table");
-  table.classList.add("table","table-striped");
+  table.classList.add("table","table-striped","flex-fill");
   let thead = document.createElement("thead");
   let theadRow=document.createElement("tr");
   let itemCol = document.createElement("th");
@@ -191,7 +193,8 @@ const showCarrito=()=>{
     index++;
   });
   table.appendChild(tbody);
-  htmlMenu.appendChild(table);
+  tableRow.appendChild(table);
+  htmlMenu.appendChild(tableRow);
   //Total y confirm/cancel
   let ttlRow=document.createElement("div");
   ttlRow.className="row";
